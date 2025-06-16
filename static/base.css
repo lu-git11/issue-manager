@@ -1,0 +1,83 @@
+.navbar {
+    height: 80px;
+    font-weight: bold;
+    padding-left: 50px;
+    border-bottom: 5px solid blue;
+    background-color: grey;
+}
+
+
+.nav-link {
+    border: 3px solid white;
+    border-radius: 20px;
+    margin-left: 5px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    background-color: blue;
+
+}
+
+body {
+    min-height: 100vh;
+    border: 5px solid blue;
+    background-color: rgb(178, 178, 178);
+}
+
+h1 {
+    margin: 10px;
+    font-size: 30px;
+}
+
+p {
+    margin: 10px;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.to-do {
+    min-height: 95%;
+    border: 5px solid red;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.working {
+    min-height: 95%;
+    border: 5px solid blue;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.complete {
+    min-height: 95%;
+    border: 5px solid greenyellow;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.card {
+    height: 80px;
+    margin: 5px;
+    font-size: 24px;
+}
+
+.card-text {
+    font-size: 12px;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-title {
+    color: rgb(0, 140, 255);
+}

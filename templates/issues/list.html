@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %}To-Do{% endblock title %}
+
+{% block content %}
+
+<h1>Issues</h1> 
+
+  <div class="list-container">
+    <div class="to-do"> 
+      <h2>To-Do</h2> 
+      {% for issue in todo_issues %}
+        <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="working">
+      <h2>In-progress</h2>
+      {% for issue in in_progress %}
+      <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="complete">
+      <h2>Complete</h2>
+      {% for issue in complete %}
+      <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endfor %}
+    </div> 
+  </div>
+
+{% endblock content %}
+
+              

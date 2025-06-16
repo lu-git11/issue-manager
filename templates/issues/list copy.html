@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block title %}To-Do{% endblock title %}
+
+{% block content %}
+
+<h1>Issues</h1> 
+{% for issue in issue_list %} 
+  <div class="list-container">
+    <div class="to-do"> 
+      <h2>To-Do</h2> 
+      {% if issue.status.name == "to-do" %}
+        <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="working">
+      <h2>In-progress</h2>
+      {% if issue.status.name == "in-progress" %}
+      <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="complete">
+      <h2>Complete</h2>
+      {% if issue.status.name == "complete" %}
+      <div class="card">
+          <div class="card-body">        
+              <a href="{% url 'issue' issue.id %}" class="card-title text-uppercase">{{ issue.title }}</a> 
+              <a class="btn btn-danger" href="{% url 'delete' issue.id %}">Delete</a>
+            </div>
+        </div>
+      {% endif %}
+    </div> 
+  </div>
+{% endfor %}
+{% endblock content %}
+
+              
